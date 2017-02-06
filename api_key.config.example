@@ -1,0 +1,4 @@
+SERVER = 'https://api-cn.faceplusplus.com/facepp/v3/'
+
+API_KEY = '[register and enter]'
+API_SECRET = '[register and enter]'
