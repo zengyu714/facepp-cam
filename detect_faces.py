@@ -1,8 +1,6 @@
 # coding: utf-8
 # ref: https://github.com/FacePlusPlus/python-sdk/blob/master/python-sdk/call.py
 
-
-
 from utils.facepp import API, File
 import utils
 import cv2
@@ -11,18 +9,18 @@ api = utils.init()
 
 # # create a Faceset to save FaceToken
 # -----------------------------------
-# ret = api.faceset.create(outer_id='family')
+# ret = api.faceset.create(outer_id='test')
 # print_result("faceset create", ret)
 #
 # # detect image
 # Face = {}
 #
-# namelist = ['myself','mom','dad']
+# namelist = ['key1','key2','key3']
 # for name in namelist:
 #     img_dir = 'res/' + name + '.jpg'
 #     res = api.detect(image_file = File(img_dir))
 #     # print_result(name, res)
-#     Face[name] = [res["faces"][0]["face_token"]]
+#     Face[name] = res["faces"][0]["face_token"]
 
 # # save vairable Face in ROM
 # ---------------------------
@@ -31,18 +29,18 @@ api = utils.init()
 
 # # save FaceToken into Faceset
 # -----------------------------
-# api.faceset.addface(outer_id = 'family',face_tokens = Face.itervalues())
+# api.faceset.addface(outer_id = 'test',face_tokens = Face.itervalues())
 
 # # delete a Faceset, if need
-# -----------------
-# api.faceset.delete(outer_id = 'family',check_empty = 0)
+# ---------------------------
+# api.faceset.delete(outer_id = 'test',check_empty = 0)
 
 
 import pickle
 Face = pickle.load(open('res/saved_face.txt', 'rb'))
 
-face_cascade = cv2.CascadeClassifier("Z:/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml")
-cap = cv2.VideoCapture(1)  # default is 0 except for the laptop, which has webcam itself
+face_cascade = cv2.CascadeClassifier("path/to/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml")
+cap = cv2.VideoCapture(1)  # default is 0, here is a USB camera
 
 while cap.isOpened():
     ret, img = cap.read()
@@ -69,7 +67,7 @@ while cap.isOpened():
         # get the face_token
         ret = api.detect(image_file = File(face_search_dir))
         # print_result("detect", ret)
-        search_result = api.search(face_token = ret["faces"][0]["face_token"], outer_id = 'family')
+        search_result = api.search(face_token = ret["faces"][0]["face_token"], outer_id = 'test')
         # print_result('search', search_result)
         if search_result['results'][0]['confidence'] > 65:   # actually in the face set
             print '=' * 60
