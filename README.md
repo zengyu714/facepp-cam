@@ -7,7 +7,7 @@ faces = face_cascade.detectMultiScale(gray, 1.1, 3)
 ```
 # Search faces with facepp
 
-see details in FacePlusPlus/python-sdk [facepp.py](https://github.com/FacePlusPlus/python-sdk/blob/master/python-sdk/facepp.py)  
+see details in FacePlusPlus/python-sdk [facepp.py](https://github.com/FacePlusPlus/python-sdk/blob/master/python-sdk/facepp.py)
 # Play sound with PyGame
 ```python
 import pygame as pg
@@ -21,9 +21,12 @@ pg.mixer.init(freq, bitsize, channels, buffer)
 pg.mixer.music.load(file_name)
 pg.mixer.music.play()
 ```
+# Demo
+<img src="https://wx2.sinaimg.cn/large/9f1c5669ly1fk6jhk73c2g20f40hqb2d.gif" width="335px" alt="blog demo"/>
+
 # Notes
 ## Ways to load variables/parameters in Python
-Solution1  
+Solution1
 
 ```python
 import json
