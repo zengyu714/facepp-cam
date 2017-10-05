@@ -22,7 +22,7 @@ pg.mixer.music.load(file_name)
 pg.mixer.music.play()
 ```
 # Demo
-<img src="https://wx2.sinaimg.cn/large/9f1c5669ly1fk6jhk73c2g20f40hqb2d.gif" width="335px" alt="blog demo"/>
+<img src="https://wx3.sinaimg.cn/mw690/9f1c5669ly1fk7if7yrgkg20f40hqb2c.gif" width="335px" alt="blog demo"/>
 
 # Notes
 ## Ways to load variables/parameters in Python
